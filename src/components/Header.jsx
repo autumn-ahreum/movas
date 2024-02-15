@@ -1,26 +1,31 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useActionData } from 'react-router-dom'
 import Nav from './Nav';
-
-//title font candidates 
-// import '@fontsource/notable';
-// import '@fontsource/shrikhand';
-
-// font candidates 
-// import '@fontsource/questrial';
 
 const Header = () => {
   
-  const [showNav, setShowNav] = useState(false);
+  const [ showNav, setShowNav ] = useState(false);
 
-  const toggleNav = () => {
+  function toggleNav() {
     setShowNav(!showNav);
   }
 
-//   useEffect(() => {
-//     let mediaQuery = window.matchMedia('(min-width: 600px)');
+  // function isDesktop(e) {
+  //   if (e.matches) {
+  //       setShowNav(false);
+  //   }
+  // }
 
-// }, []);
+  // useEffect( () => { 
+  //   let mediaQuery = window.matchMedia( '(min-width: 640px)' );
+  //   mediaQuery.addEventListener( 'change', isDesktop );
+  //   console.log('mediaQuerys value is', mediaQuery);
+
+  //   // Clean up function before hook works
+  //   return () => mediaQuery.removeEventListener( 'change', isDesktop );
+  // }, [  ])
+
+
 
   return (
     <div>
@@ -28,9 +33,9 @@ const Header = () => {
           <div className= "logo-box">
             <Link to="/"><h1>MOVAS</h1></Link>
           </div>
-          <button className="btn-hamburger"
+          <button className="btn-hamburger" 
                   onMouseDown= {(e) => { e.preventDefault(); }}
-                  onClick= {toggleNav}
+                  onClick= { toggleNav }
                   > 
               {/**
                * found at this url:
@@ -43,7 +48,8 @@ const Header = () => {
               </span>
               <span className="sr-only">Menu</span>
           </button>
-          <Nav className="main-nav"/>
+          <Nav className="main-nav" 
+               handleShowHideNav={ toggleNav }/>
     </header>
     </div>
   );

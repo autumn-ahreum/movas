@@ -1,8 +1,18 @@
 import { NavLink } from 'react-router-dom';
-const Nav = () => {
+const Nav = ( { handleShowHideNav  }) => {
+
+    function closeNav(e){
+        if( window.innerWidth < 640 ) {
+            // call a function through props
+            handleShowHideNav()
+        } else {
+            e.target.blur();
+        }
+    }
 
   return (
       <nav className= "main-nav"
+            onClick={ closeNav }
       >
           <ul>
               <li><NavLink to="/">Home</NavLink></li>

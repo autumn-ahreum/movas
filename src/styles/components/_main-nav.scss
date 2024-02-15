@@ -1,21 +1,37 @@
 @use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
 
 .main-nav {
     width: 100%;
     overflow: hidden; 
     visibility: hidden;
     height: 0;
-    transition: height 0.5s ease, visibility 0s 0.5s;
+    transform : scale(0);
+    transition: transform 0.3s ease, visibility 0s;
 
     ul {
         list-style-type: none;
         height: 6rem;
+        font-size: .8rem;
+
+        li {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid $brandWhite;
+
+            &:last-child {
+            border-bottom: none;
+            }
+        }
     }
     
     .show &{
-        transition: height 0.5s ease, visibility 0s;
+        transition: transform 0.3s ease, visibility 0s;
         visibility: visible;
-        height: 100px; 
+        height: em(180); 
+        transform : scale(1);
+
     } 
     
     a {
@@ -27,6 +43,37 @@
         padding: 0 0.5rem;
     }
 
+    @media (min-width: em(640)){
+        width : em(400);
+        height: em(50);
+        visibility: visible;
+        transform : none;
+        transition: none;
 
+        .show & {
+            transition: none;
+            height: auto;
+        }
+        
+        ul {
+            display: flex;
+            height: 51px;
+            align-items: center;
+
+
+            li {
+                flex: 1;
+                border-bottom: none;
+                font-size: 0.7rem;
+                padding: 0;
+
+                a {
+                    &:hover {
+                        color : $accent;
+                    }
+                }
+            }
+        }
+    }
 }
 
