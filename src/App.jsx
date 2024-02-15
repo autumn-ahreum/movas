@@ -1,8 +1,10 @@
 import { useState } from 'react'
 import AppRouter from './routers/AppRouter'
-import '@fontsource/questrial';
+import './styles/styles.scss'
 
-import './App.css'
+// import '@fontsource/questrial';
+
+// import './App.css'
 
 function App() {
 

@@ -1,0 +1,28 @@
+@use 'settings' as *;
+
+body {
+    font-family: $bodyFont;
+    color: $brandWhite;
+}
+
+ul, li, a{
+margin: 0;
+padding:0; 
+color : #fff;
+text-decoration: none;
+}
+
+h1 {
+/* font-size: vw; */
+}
+
+p {
+font-family: 'Questrial', sans-serif;
+font-size: 1rem;
+}
+
+
+/* font on image */
+.textOnImage {
+text-shadow: 2px 2px 4px rgba(0,0,0,.45);
+}

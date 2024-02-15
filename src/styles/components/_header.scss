@@ -1,0 +1,71 @@
+// Header 
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: $brandBlack;
+    color: $brandWhite;
+    padding: .2rem .5rem;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+        // font-family: 'Notable', sans-serif;
+        font-family: $titleFont, sans-serif; 
+        margin: 0 .2rem;
+    }
+
+    .btn-hamburger { 
+        border: none;
+        background: none;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        .hamburger {
+            -webkit-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+
+            .line {
+                width: 1.5rem;
+                height: .15rem;
+                background-color: #fff;
+                display: block;
+                margin: 4px auto;
+                -webkit-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                    
+                .show &:nth-child(1){
+                    width: .8rem;
+                }
+                  
+                .show &:nth-child(2){
+                    width: 1rem;
+                }
+
+            }
+                    
+            .show &{
+                -webkit-transform: rotate(90deg);
+                -ms-transform: rotate(90deg);
+                -o-transform: rotate(90deg);
+                transform: rotate(90deg);
+            }
+
+        }
+    }
+
+    .show.btn-hamburger{
+        background-color: red;
+    }
+
+}

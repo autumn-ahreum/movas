@@ -1,0 +1,32 @@
+@use '../base/settings' as *;
+
+.main-nav {
+    width: 100%;
+    overflow: hidden; 
+    visibility: hidden;
+    height: 0;
+    transition: height 0.5s ease, visibility 0s 0.5s;
+
+    ul {
+        list-style-type: none;
+        height: 6rem;
+    }
+    
+    .show &{
+        transition: height 0.5s ease, visibility 0s;
+        visibility: visible;
+        height: 100px; 
+    } 
+    
+    a {
+        font-family: $bodyFont;
+        font-size: 14px;
+        text-decoration: none;
+        font-size: 1.3em;
+        font-weight: 100;
+        padding: 0 0.5rem;
+    }
+
+
+}
+

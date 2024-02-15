@@ -1,59 +1,52 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from './Nav';
-import styles from '../styles/Header.module.css'
 
 //title font candidates 
-import '@fontsource/notable';
-import '@fontsource/shrikhand';
+// import '@fontsource/notable';
+// import '@fontsource/shrikhand';
 
 // font candidates 
-import '@fontsource/questrial';
+// import '@fontsource/questrial';
 
 const Header = () => {
+  
+  const [showNav, setShowNav] = useState(false);
 
-    // const [ showNav, setShowNav ] = useState(false);
-    
-    // function toggleNav() {
-    //     setShowNav(!showNav);
+  const toggleNav = () => {
+    setShowNav(!showNav);
+  }
 
-    // }
-    // useEffect ( () => {
-    //     let mediaQuery = window.matchMedia('(min-width: 600px)');
-    //     mediaQuery.addEventListener('change', isDesktop);
+//   useEffect(() => {
+//     let mediaQuery = window.matchMedia('(min-width: 600px)');
 
-    //     return () => mediaQuery.removeEventListener('change', isDesktop)
-
-    // }, [])
-
-    // function isDesktop(e) {
-    //     if(e.matches) {
-    //         showNav(true);
-    //     }
-    
+// }, []);
 
   return (
     <div>
-     {/* <header className={ showNav ? 'show' : '' }> */}
-    <header>
-          <div className={styles.logoBox}>
+    <header className= {showNav ? 'show' : ''}>
+          <div className= "logo-box">
             <Link to="/"><h1>MOVAS</h1></Link>
           </div>
-          <button className={styles.hamburgerMenu}> 
+          <button className="btn-hamburger"
+                  onMouseDown= {(e) => { e.preventDefault(); }}
+                  onClick= {toggleNav}
+                  > 
               {/**
                * found at this url:
                * https://codepen.io/RRoberts/pen/ZBYaJr
                **/}
-              <div className={styles.hamburger} id="hamburger">
-                      <span className={styles.line}></span>
-                      <span className={styles.line}></span>
-                      <span className={styles.line}></span>
-              </div>
+              <span className="hamburger" id="hamburger">
+                      <span className="line"></span>
+                      <span className="line"></span>
+                      <span className="line"></span>
+              </span>
+              <span className="sr-only">Menu</span>
           </button>
-          <Nav className={styles.mainNav} />
+          <Nav className="main-nav"/>
     </header>
     </div>
-  )
-}
+  );
+};
 
 export default Header;

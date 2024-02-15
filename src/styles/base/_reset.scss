@@ -1,0 +1,40 @@
+/* reset */
+@use '../base/settings' as *;
+
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: $brandWhite;
+    background-color: $brandBlack;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+}
+
+/* Image Reset */
+img {
+max-width: 100%;
+height: auto;
+}
+
+/* Table Reset */
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+
+
+
+
+

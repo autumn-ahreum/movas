@@ -1,18 +1,8 @@
 import { NavLink } from 'react-router-dom';
-import styles from '../styles/Nav.module.css';
 const Nav = () => {
 
-  // function closeNav(e){
-      // if( window.innerWidth < 600 ) {
-      //     // call a function
-      //     handleShowHideNav()
-      // } else {
-      //     e.target.blur();
-      // }
-  // }
-  
   return (
-      <nav className={styles.mainNav}
+      <nav className= "main-nav"
       >
           <ul>
               <li><NavLink to="/">Home</NavLink></li>

@@ -1,0 +1,17 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+
+
+.footer-wrapper { 
+    display: flex;
+    flex-direction: row;
+    background-color: $accent;
+    color: $brandWhite;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
