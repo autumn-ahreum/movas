@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import PopularSection from '../components/sections/PopularSection';
+// import Swiper from '../components/sections/PopularSection ';
+import PopularSection from '../components/sections/PopularSection ';
 
 
 
