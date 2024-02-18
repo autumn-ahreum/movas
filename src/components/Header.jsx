@@ -10,23 +10,6 @@ const Header = () => {
     setShowNav(!showNav);
   }
 
-  // function isDesktop(e) {
-  //   if (e.matches) {
-  //       setShowNav(false);
-  //   }
-  // }
-
-  // useEffect( () => { 
-  //   let mediaQuery = window.matchMedia( '(min-width: 640px)' );
-  //   mediaQuery.addEventListener( 'change', isDesktop );
-  //   console.log('mediaQuerys value is', mediaQuery);
-
-  //   // Clean up function before hook works
-  //   return () => mediaQuery.removeEventListener( 'change', isDesktop );
-  // }, [  ])
-
-
-
   return (
     <div>
     <header className= {showNav ? 'show' : ''}>

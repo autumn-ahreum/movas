@@ -8,9 +8,18 @@
 @use './components/hamburger';
 @use './components/main-nav';
 @use './components/footer';
+@use './components/wrapper';
+
+//elements
+@use './components/card';
+
+
 
 // Utilities
 @use './utilities/utility-classes';
 
-// Google Fonts - Import
-@import url('https://fonts.googleapis.com/css2?family=Notable&family=Questrial&family=Shrikhand&display=swap')
+// Google Fonts, title - Import
+@import url('https://fonts.googleapis.com/css2?family=Notable&family=Questrial&family=Shrikhand&display=swap');
+
+// Google Fonts, text font - Import
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');

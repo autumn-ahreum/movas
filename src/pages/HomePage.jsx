@@ -1,18 +1,22 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
+import PopularSection from '../components/sections/PopularSection';
+
 
 
 const HomePage = () => {
-
-    const [movies, setMovie] = useState([])
-
-    useEffect ( () => {
-        // fetch date from the movie api
-        // const result = fetch
-        // setMovie( [...result] )
-    }, [] )
-
   return (
-    <div>HomePage</div>
+    <main class="main-container">
+      <div class="banner-section">
+
+      </div>
+
+      <div class="card-sections-wrapper">
+        <PopularSection/>
+      </div>
+      
+
+
+    </main>
   )
 }
 

@@ -1,0 +1,155 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.card-container {
+    width: em(140);
+    height: 100%;
+    margin: 0.2rem ;
+    position: relative;
+
+    h5 {
+        font-size: .8rem;
+        line-height: 1;
+        margin-top: -3px;
+        font-weight: 500;
+        padding: 1px 2px;
+        width: 100%;
+        
+
+        &:hover {
+        cursor: pointer;
+        }
+    }
+
+
+    img {
+        max-width: 100%;
+        border-radius: 5px;
+        box-shadow: 2px 2px 5px rgba(77, 77, 77, 0.169);
+    }
+
+
+
+    &:hover .movie-info {
+        visibility: visible; 
+        transition: visibility 0.2s ease-in-out;
+
+    }
+
+    .movie-info {
+        visibility: hidden;
+        width : 100%;
+        height: 210px;
+        border-radius: 4.5px;
+        position: absolute;
+        top : 0;
+        background-color: rgba(6, 1, 18, 0.82);       
+        padding: 4px;
+        transition: visibility 0.1s ease-in-out;
+
+
+        h5 {
+            font-size: .9rem;
+            line-height: 1;
+            margin: 8px 0px 1px;
+            font-weight: 700;
+        }
+
+        .card-second-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            p {
+                margin-top: 0;
+
+                .fa-solid.fa-star {
+                    color:#ffeb0a;
+                }
+            }
+        }
+        
+        .card-summury{
+            letter-spacing: -0.2px;
+            // Remove after 5th line of text  
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+            line-height: 1.15;
+            text-align: left;
+            word-wrap: break-word;
+            display: -webkit-box;
+            -webkit-line-clamp: 5 ;
+            -webkit-box-orient: vertical;
+        }
+        .card-last-row {
+            padding : 0 10px 4px 4px;
+            width: 100%;
+            position: absolute;
+            bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+
+            .card-check-btn {
+                @include borderless-btn ;
+                @include flatten;
+
+                color: $brandWhite;
+
+                .fa-solid.fa-plus{
+                    color: $brandWhite;
+                    font-size: 1.4rem;
+                }
+
+                &::before {
+                    content: 'Add to list';
+                    color : $brandWhite;
+                    background-color: rgba(125, 125, 125, 0.173);
+                    position: absolute;
+                    padding: 5px;
+                    top: -23px;
+                    left: -3px;
+                    border-radius: 5px;
+                    visibility: hidden;
+                    transition: visibility 0.3s ease;
+                    
+                }
+
+                &:hover {
+                    cursor: pointer;
+                    &::before {
+                        visibility: visible; 
+                    }
+                }
+
+
+
+
+
+            }
+
+            .card-more-info-btn {
+                @include flatten;
+                color: $brandWhite;
+                background-color: transparent;
+                border: 0.8px solid $brandWhite;
+                border-radius: 3px;
+                padding : 6px 12px;
+                
+                &:hover {
+                    background-color: rgba(125, 125, 125, 0.139);
+                    cursor: pointer;
+                }
+            }
+            
+        }
+
+    
+        
+
+
+    }
+
+
+}

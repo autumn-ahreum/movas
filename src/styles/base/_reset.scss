@@ -34,6 +34,20 @@ border-collapse: collapse;
 border-spacing: 0;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0.5rem 0;
+    font-family: $textFont;
+    font-weight: 700;
+    
+}
+
+li, p, a {
+    font-family: $textFont;
+    font-weight: 300;
+    margin: 6px 0;
+}
+
+
 
 
 

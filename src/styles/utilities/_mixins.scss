@@ -1,4 +1,16 @@
+@use '../base/settings' as *;
+
+
 // Mixins
+
+//Set off button-default 
+@mixin borderless-btn {
+    background-color: transparent;
+    border: none;
+    font-family: $textFont;
+}
+
+
 
 // Margin center...
 @mixin mc($set-tb: false, $t: 0, $b: 0) {
@@ -28,3 +40,5 @@
     }
     
 }
+
+
