@@ -26,7 +26,6 @@ export default () => {
   const [url_set, setUrl] = useState(url);
 
   useEffect ( ()=> {
-
     const dataFromLocalStorage = JSON.parse( localStorage.getItem('myList')) || [];
 
     fetch(url_set)
@@ -41,6 +40,8 @@ export default () => {
           })
       setMovieData(updatedData);
     }, [url_set])
+
+    
   })
 
   return (

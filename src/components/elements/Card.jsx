@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/"
 
-const Card = ({ id, title, poster_path, vote_average, overview, release_date, addedToList, removeFromList }) => {
+const Card = ({ id, title, poster_path, vote_average, overview, release_date, addedToList, removeFromList}) => {
 
   const [ posterClass, setPosterClass ] = useState( 'card-poster' ); // class name for poster img
   const [ addToList, setAddToList ] = useState( false ); // add my list button
@@ -20,6 +20,8 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
       setAddToList(true);
     }
   }, []);
+
+  
   function clickAddToList() {
 
     if (addToList == false ) {
@@ -28,20 +30,22 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
       const cardData = { id, title, poster_path, vote_average, overview, release_date, addToList: !addToList };
       const myList = JSON.parse( localStorage.getItem('myList') ) || [];
   
-      // Check if cardData.id does not exist in myList
+      // Check if cardData.id does not exist in myList local storage
       if ( !myList.some( item => item.id === cardData.id ) ) {
         myList.push(cardData);
         localStorage.setItem('myList', JSON.stringify(myList));
       } 
     } else {
-        setAddToList(!addToList);
-        removeFromList(id);
+      setAddToList(!addToList);
+      // directly remove id from local storage
+      const myList = JSON.parse( localStorage.getItem('myList') ) || []
+      const updatedList = myList.filter(item => item.id !==  id);
+      localStorage.setItem('myList', JSON.stringify(updatedList));
+
+      removeFromList(id); // for favolite page 
     }
   }
 
-
-
- 
   return (
     <div class= "card-container" >
         <img 
@@ -66,9 +70,9 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
             <p class="card-summury">{ overview }</p>
             <div class='card-last-row' >
                 <button 
-                  class="card-check-btn"
-                  onClick= { clickAddToList }            
-                >{ (addToList ) ? <i className="fa-solid fa-check"></i>  : <i className="fa-solid fa-plus"></i> } </button>
+                className={`card-check-btn ${ addToList ? 'is-added' : ''}`}
+                  onClick= { clickAddToList }>
+                  { (addToList ) ? <i className="fa-solid fa-check"></i>  : <i className="fa-solid fa-plus"></i> } </button>
                 <button 
                   class="card-more-info-btn"
                 >

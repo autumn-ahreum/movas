@@ -6,21 +6,21 @@ const MyListPage = () => {
 
   useEffect(() => {
     const storedList = JSON.parse(localStorage.getItem('myList')) || [];
-    setMyList(storedList);
+    setMyList( storedList );
   }, []);
 
-  function removeFromList( id ) {
+  function removeFromList(id) {
     const updatedList = myList.filter(item => item.id !== id);
-    setMyList ( updatedList );
+    setMyList(updatedList);
     localStorage.setItem('myList', JSON.stringify(updatedList));
   }
 
   return (
     <div>
       <h1>My List</h1>
-      { myList.map ( item, index => (
+      { myList.map ( item => (
         <Card
-          key = {index}
+          key = {item.id}
           id = {item.id}
           title = {item.title}
           poster_path = {item.poster_path}

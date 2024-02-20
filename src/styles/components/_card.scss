@@ -108,12 +108,6 @@
                     font-size: 1.4rem;
                 }
 
-                .fa-solid.fa-check {
-                    color: $brandWhite;
-                    font-size: 1.4rem;
-                }
-
-
                 &::before {
                     content: 'Add to list';
                     color : $brandWhite;
@@ -125,8 +119,19 @@
                     border-radius: 5px;
                     visibility: hidden;
                     transition: visibility 0.3s ease;
+                }
+    
+                .fa-solid.fa-check {
+                    color: $brandWhite;
+                    font-size: 1.4rem;
+                    margin-left: 2px;
                     
                 }
+
+                &.is-added::before {
+                    content: 'Delete from list';
+                }
+
 
                 &:hover {
                     cursor: pointer;

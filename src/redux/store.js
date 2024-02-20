@@ -4,12 +4,13 @@ const myListSlice = createSlice({
     name: 'myList',
     initialState : [],
     reducers: {
-        addToList : state => {
-            
+        addToList : (state, newMovie) => {
+            return [...state.myList, newMovie]
         } 
-
     }
 })
+
+export let { addToList } = myListSlice.actions
 
 export default configureStore({
     reducer: {
