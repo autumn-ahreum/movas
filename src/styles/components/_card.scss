@@ -3,10 +3,11 @@
 @use '../utilities/mixins' as *;
 
 .card-container {
-    min-width: 100px ;
-    height: 100%;
+    min-width: 100px;
+    height: auto;
     margin: 0.2rem ;
     position: relative;
+    
 
     h5 {
         font-size: .8rem;
@@ -20,6 +21,10 @@
         &:hover {
         cursor: pointer;
         }
+    }
+
+    .place-holder {
+        object-fit: cover;
     }
 
 
@@ -77,11 +82,11 @@
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: normal;
-            line-height: 1.15;
+            line-height: 1.2;
             text-align: left;
             word-wrap: break-word;
             display: -webkit-box;
-            -webkit-line-clamp: 5 ;
+            -webkit-line-clamp: 6 ;
             -webkit-box-orient: vertical;
         }
         .card-last-row {
@@ -98,10 +103,16 @@
 
                 color: $brandWhite;
 
-                .fa-solid.fa-plus{
+                .fa-solid.fa-plus {
                     color: $brandWhite;
                     font-size: 1.4rem;
                 }
+
+                .fa-solid.fa-check {
+                    color: $brandWhite;
+                    font-size: 1.4rem;
+                }
+
 
                 &::before {
                     content: 'Add to list';
@@ -123,11 +134,6 @@
                         visibility: visible; 
                     }
                 }
-
-
-
-
-
             }
 
             .card-more-info-btn {

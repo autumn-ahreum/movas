@@ -13,8 +13,10 @@
     "@fontsource/notable": "^5.0.18",
     "@fontsource/questrial": "^5.0.8",
     "@fontsource/shrikhand": "^5.0.18",
+    "@reduxjs/toolkit": "^2.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
     "swiper": "^11.0.6"
   },
