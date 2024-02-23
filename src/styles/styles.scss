@@ -10,6 +10,9 @@
 @use './components/footer';
 @use './components/wrapper';
 
+//pages
+@use './pages/mylist';
+
 //elements
 @use './components/card';
 @use './components/swiper';

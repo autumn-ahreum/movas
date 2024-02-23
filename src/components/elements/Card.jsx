@@ -1,5 +1,8 @@
 import React, { useState , useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom';
+
+
 // import { addToList } from '../../redux/store';
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/"
@@ -73,11 +76,11 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
                 className={`card-check-btn ${ addToList ? 'is-added' : ''}`}
                   onClick= { clickAddToList }>
                   { (addToList ) ? <i className="fa-solid fa-check"></i>  : <i className="fa-solid fa-plus"></i> } </button>
-                <button 
-                  class="card-more-info-btn"
-                >
-                  More Info</button>
+                  <Link to={ `/movie/${id}` }>
+                    <button class="card-more-info-btn"> More Info</button>
+                  </Link>
             </div>
+            
         </div>
     </div>
   )

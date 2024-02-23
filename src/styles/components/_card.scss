@@ -50,7 +50,7 @@
         position: absolute;
         top : 0;
         background-color: rgba(6, 1, 18, 0.82);       
-        padding: 6px 10px 6px 2px;
+        padding: 6px 10px 6px 4px;
         transition: visibility 0.1s ease-in-out;
 
 
@@ -60,6 +60,7 @@
             line-height: 1;
             margin: 8px 0px 1px;
             font-weight: 700;
+            padding-left: 0;
         }
 
         .card-second-row {

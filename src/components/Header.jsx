@@ -11,7 +11,6 @@ const Header = () => {
   }
 
   return (
-    <div>
     <header className= {showNav ? 'show' : ''}>
           <div className= "logo-box">
             <Link to="/"><h1>MOVAS</h1></Link>
@@ -34,7 +33,6 @@ const Header = () => {
           <Nav className="main-nav" 
                handleShowHideNav={ toggleNav }/>
     </header>
-    </div>
   );
 };
 

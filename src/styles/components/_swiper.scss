@@ -4,9 +4,21 @@
 
 .cards-section {
 
-    h2 {
-        margin: 2px 4px;
+    .cards-section-header {
+        display: flex;
+        justify-content: flex-start;
+        align-items:last baseline;
+        h2 {
+            margin: 2px 4px;
+        }
+
+        a {
+            font-size: .7rem;
+            margin-left: 5px;
+        }
     }
+
+
     .swiper {
 
         .swiper-wrapper {
