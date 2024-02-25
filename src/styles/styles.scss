@@ -9,13 +9,13 @@
 @use './components/main-nav';
 @use './components/footer';
 @use './components/wrapper';
+@use './components/frontbanner';
+
 
 //pages
 @use './pages/mylist';
 @use './pages/movie';
 @use './pages/about';
-
-
 
 //elements
 @use './components/card';

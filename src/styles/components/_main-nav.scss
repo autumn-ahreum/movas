@@ -8,7 +8,8 @@
     overflow: hidden; 
     visibility: hidden;
     height: 0;
-    transform : scale(0);
+    // transform : scale(0);
+    transform: scaleX(0);
     transition: transform 0.3s ease, visibility 0s;
 
     ul {
@@ -30,7 +31,7 @@
         transition: transform 0.3s ease, visibility 0s;
         visibility: visible;
         height: em(180); 
-        transform : scale(1);
+        transform : scaleX(1);
 
     } 
     

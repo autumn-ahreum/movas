@@ -18,5 +18,10 @@ header {
     h1 {
         font-family: $titleFont, sans-serif; 
         margin: 0 .2rem;
+
+        &:hover,
+        &:checked {
+            color: $accent;
+        }
     }
 }

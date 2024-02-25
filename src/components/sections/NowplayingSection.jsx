@@ -17,7 +17,8 @@ import 'swiper/css/scrollbar';
 // URL = base_url + actual_url + API_key
 let API_key = "&api_key=337d4aa999639b97c6ca769ff17079b1";
 const base_url = "https://api.themoviedb.org/3";
-let url = base_url + "/movie/now_playing?language=en-US&page=1" + API_key;
+let url = base_url + "/movie/now_playing?language=en-US&page=2" + API_key;
+
 
 
 export default () => {

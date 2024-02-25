@@ -17,28 +17,40 @@
 
         .line {
             width: 1.5rem;
-            height: .15rem;
+            height: .18rem;
             background-color: $brandWhite;
             display: block;
             margin: 4px auto;
+            border-radius: 5px;
             transition: all 0.3s ease-in-out;
+
+            .show &{
+            margin: 3px auto;
+
+            }
                 
             .show &:nth-child(1){
                 width: 1.1rem;
-                height: .1rem;
+                height: .15rem;
                 transition: all 0.3s ease-in-out;
+                background-color: $accent;
+                border-radius: 5px;
             }
               
             .show &:nth-child(2){
-                width: .8rem;
-                height: .1rem;
+                width: 1.1rem;
+                height: .15rem;
                 transition: all 0.3s ease-in-out;
+                background-color: $accent;
+                border-radius: 5px;
             }
 
             .show &:nth-child(3){
+                width: 1.15rem;
+                height: .15rem;
                 transition: all 0.3s ease-in-out;
-                width: 1.1rem;
-                height: .1rem;
+                background-color: $accent;
+                border-radius: 5px;
             }
         }
     }
