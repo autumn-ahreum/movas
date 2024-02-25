@@ -1,0 +1,82 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.about-page-wrapper {
+
+    padding-left: 3px;
+    padding-right:3px;
+
+    .title {
+
+        h2 {
+            // font-weight: 700;
+            padding-left: 10px;
+            font-size: 1.1rem;
+            margin-bottom: 0;
+
+            &:last-of-type{
+            margin-top: 0;
+            // margin-bottom: 10px;
+            }
+        }
+    }
+    .contents-wrapper {
+        padding: 10px 6px;
+
+        .first-row {
+
+            .left-side {
+                text-align: center;
+    
+                .logo-img {
+                    width: 99%;
+                    border-radius: 8px;
+                }
+    
+            }
+    
+            .right-side {
+    
+                p {
+                    font-size: 1rem;
+                    line-height: 1.5;
+                    padding: 0 4px
+                }
+    
+    
+            }
+
+        }
+        
+        .second-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 1.5rem; 
+            gap: 10px;
+
+            .tmdb-logo {
+                width: 200px;
+                max-width: 315px;
+            }
+
+            p { text-align: center;
+                font-size: .9rem;
+                line-height: 1.2;
+                background-color: rgba(67, 67, 67, 0.137);
+                padding: 2px 4px;
+                border-radius: 6px;
+                
+
+            }
+
+        }
+        
+
+
+    }
+
+
+}

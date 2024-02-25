@@ -2,5 +2,215 @@
 @use '../utilities/functions' as *;
 @use '../utilities/mixins' as *;
 
-.movie-main-section {
+.contents-wrapper {
+    padding-left: 5px;
+    padding-right: 5px;
+
+    .movie-banner-container {
+        position: relative;
+        max-width: 100%;
+        height: auto;
+
+
+        .image-wrapper {
+            position: relative;
+            max-width: 100%;
+            height: auto;
+    
+            .movie-back-image {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+    
+            &::after {
+                content: " ";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                z-index: 2;
+                top: 0px;
+                display: block;
+                background: rgba(0, 0, 0, 0) 
+                        linear-gradient(to bottom, 
+                            rgba(255, 255, 255, 0) 10%, 
+                            rgba(0, 0, 0, 0.1) 50%,
+                            rgb(0, 0, 0) 100%) 
+                            repeat scroll 0 0;           
+            }
+        }
+
+        .title-container {
+            position: absolute;
+            bottom: 5%;
+            left: 5px;
+            z-index: 5;
+            display: block;
+            padding-left: 4px;
+            // display: flex;
+            max-width: 100%;
+
+            .left-title-side {
+
+                .card-check-btn {
+                    @include borderless-btn ;
+                    @include flatten;
+    
+                    color: $brandWhite;
+                    color: #fcfcfc;
+                    border: white solid 1.5px;
+                    border-radius: 16%;
+                    padding: 2px;
+                    margin-bottom: -4px;
+    
+                    .fa-solid.fa-plus {
+                        color: $brandWhite;
+                        font-size: .8rem;
+                    }
+    
+                    &::before {
+                        content: 'Add to list';
+                        color : $brandWhite;
+                        background-color: rgba(125, 125, 125, 0.173);
+                        position: absolute;
+                        padding: 5px;
+                        top: -23px;
+                        left: -3px;
+                        border-radius: 5px;
+                        visibility: hidden;
+                        transition: visibility 0.3s ease;
+                    }
+        
+                    .fa-solid.fa-check {
+                        color: $brandWhite;
+                        font-size: .9rem;
+                        margin-left: 2px;
+                        
+                    }
+    
+                    &.is-added::before {
+                        content: 'Delete from list';
+                    }
+    
+    
+                    &:hover {
+                        cursor: pointer;
+                        &::before {
+                            visibility: visible; 
+                        }
+                    }
+                }
+
+            }
+
+            }
+            .right-title-side {
+
+                h2 {
+                    margin-bottom: 0;
+                    margin-top: 0;
+                }
+                p {
+                    margin-top: 0;
+    
+                }
+
+                
+
+
+            
+        }
+    }
+
+    .main-info-container {
+        display: flex;
+        gap: 5px;
+        max-width: 100%;
+        margin-top: 6px;
+        margin-bottom: 10px;
+
+
+        .info-left {
+            width: calc(68% - 3px);
+            padding-left: 3px;
+
+            .casts {
+
+                h3 {
+                    margin: 0;
+                }
+                p {
+                    font-size: .9rem;
+                    line-height: 1.3;
+                    display: black;
+                    margin-top: 0;
+                }
+            }
+
+            .genre-container {
+
+                .genre {
+                    display: inline-block;
+                    margin: 0px 5px 0 0;
+                    font-size: .85rem;
+                    background-color: rgb(139 89 206 / 30%);
+                    padding: 0 4px;
+                    border-radius: 3px;
+                }
+            }
+
+
+            .summary {
+
+                padding-left: 0px;
+                h3 {
+                    margin-top: 8px;
+                    margin-bottom: 0;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                    line-height: 1.2;
+                }
+            }
+
+
+        }
+
+        .info-right {
+            width: calc(32% - 4px); 
+            margin-top: 4px;
+
+            img { 
+                border-radius: 4px;
+
+                // display: block;
+            }
+        }
+    }
+    .secondary-info-container {
+
+        .summary {
+            padding: 5px 4px 8px 0px;
+
+            h2 {
+                margin: 0;
+            }
+            p {
+                font-size: .9rem;
+                line-height: 1.4;
+            }
+        }
+
+    }
+    
 }
+
+
+
+
+
+
+    
+
+
