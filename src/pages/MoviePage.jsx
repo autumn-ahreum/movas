@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+const imageFolderPath = import.meta.env.BASE_URL + "images/";
 
 const API_KEY = "?&api_key=337d4aa999639b97c6ca769ff17079b1";
 const BASE_URL = "https://api.themoviedb.org/3/movie/";
@@ -114,19 +115,13 @@ const MoviePage = () => {
             <img src={IMG_BASE_URL + movieData.poster_path} 
                   alt={movieData.title}
                   class="movie-poster" /> ):
-            (<img src='../../public/image/image-place-holder.jpg' 
+            (<img src={`${imageFolderPath}image-place-holder.jpg`}
                 class="detail-place-holder"
                 alt="Image Place Holder"/>
             )}
         </div>
-
-        </div>
-
-        
-       
-        {/*--Movie Main-Info Container Ends--*/}
-
-      
+      </div>
+      {/*--Movie Main-Info Container Ends--*/}
     </main>
   )
 }

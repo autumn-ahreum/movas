@@ -1,4 +1,5 @@
 import React from 'react'
+const imageFolderPath = import.meta.env.BASE_URL + "images/";
 
 const AboutPage = () => {
   return (
@@ -11,7 +12,7 @@ const AboutPage = () => {
       <div class="contents-wrapper">
         <div class="first-row">
           <div class="left-side">
-            <img class="logo-img" src="../../public/image/movas-logo-img.jpg" alt="Movas Logo" />
+            <img class="logo-img" src={`${imageFolderPath}movas-logo-img.jpg`}alt="Movas Logo" />
           </div>
           <div class="right-side">
             <p>Movas is a website to provide users to search any movies and view details of movies such as summaries and main casts. Movas utilizes the movie database, which is a powerful community-built movie database.</p>
@@ -19,7 +20,7 @@ const AboutPage = () => {
           </div>
         </div>
         <div class="second-row">
-          <img class="tmdb-logo" src="../../public/image/tmdb_logo.svg" alt="TMDB Logo" />
+          <img class="tmdb-logo" src={`${imageFolderPath}tmdb_logo.svg`} alt="TMDB Logo" />
           <p>* This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
         </div>
 

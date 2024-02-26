@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
     base: '/movas/',
     build: {
-      outDir: 'mavas'
+      outDir: 'movas'
     },
-    plugins: [reactRefresh()],
+    plugins: [react()],
 })

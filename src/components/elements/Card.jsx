@@ -1,6 +1,8 @@
 import React, { useState , useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom';
+
+const imageFolderPath = import.meta.env.BASE_URL + "images/";
+
 
 
 // import { addToList } from '../../redux/store';
@@ -57,7 +59,7 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
             class = {posterClass}
             onError={(e) => {
               e.target.onerror = null; // prevent infinite loop
-              e.target.src = '../../../public/image/image-place-holder.jpg'; 
+              e.target.src = `${imageFolderPath}image-place-holder.jpg`; 
               e.target.alt = 'Generic Image Place Holder';
               setPosterClass('place-holder'); // Update the poster class state 
             }}
@@ -85,5 +87,4 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
     </div>
   )
 }
-
 export default Card;
