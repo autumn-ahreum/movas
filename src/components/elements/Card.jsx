@@ -70,7 +70,7 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
                 <p><i class="fa-solid fa-star"></i>
                    { vote_average.toFixed(1) }</p>
             </div>
-            <p class="card-summury">{ overview }</p>
+            <p class="card-summary">{ overview }</p>
             <div class='card-last-row' >
                 <button 
                 className={`card-check-btn ${ addToList ? 'is-added' : ''}`}

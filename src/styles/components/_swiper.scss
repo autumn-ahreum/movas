@@ -21,29 +21,52 @@
 
 
     .swiper {
+        $height : 8px;
 
         .swiper-wrapper {
             .swiper-slide {
                 margin: 10px 2px 0 0;
-        }
+            }
         }
 
         .swiper-scrollbar  {
             background: #7772723b;
-            height: 8px;
+            height: $height;
             border-radius: 3px;
             width: calc(100% - 65 * var(--swiper-scrollbar-sides-offset, 1%));
             left: var(--swiper-scrollbar-sides-offset, 1%);
             top: var(--swiper-scrollbar-bottom, 0px);
             margin-bottom: 4px;
 
+  
+
             .swiper-scrollbar-drag {
                 background: #71549897;
                 border-radius: 1px;
-                height: 8px;
-
-                
+                height: $height;
             }
+        }
+        
+        @media (min-width: em(640)) {
+            .swiper-scrollbar {
+                width: calc(100% - 90 * var(--swiper-scrollbar-sides-offset, 1%));
+                height: 6px;
+                margin-left: -4px;
+
+                .swiper-scrollbar-drag {
+                    height: 6px;
+                }
+            }
+        }
+
+        @media (min-width: em(1024)){
+
+            .swiper-scrollbar {
+                margin-left: -10px;
+
+            }
+
+
         }
 
         .swiper-button-prev, 
@@ -85,6 +108,5 @@
                 visibility: visible;
             }
         }
-
     }
 }

@@ -12,11 +12,10 @@ import  MyListPage from '../pages/MyListPage';
 import  NotFoundPage from '../pages/NotFoundPage';
 
 
-
 const AppRouter = () => {
   return (
 
-    <BrowserRouter>
+    <BrowserRouter basename={"/movas"}>
         <Header />
         <Routes>
             <Route path="/" element={<HomePage />} />

@@ -20,7 +20,6 @@ const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/"
 export default() => {
   const [ movieData, setMovieData ] = useState([]);
   const [url_set, setUrl] = useState(url);
-  const [randNums, setRandNumbs] = useState([]);
 
 
   useEffect( () => {
@@ -39,8 +38,8 @@ export default() => {
       slidesPerView = {1}
       navigation
       pagination={{ clickable: true }}   
-      onSlideChange = {() => console.log('slide change')}
-      onSwiper = {(swiper) => console.log(swiper)}
+      // onSlideChange = {() => console.log('slide change')}
+      // onSwiper = {(swiper) => console.log(swiper)}
       >
       {
         (movieData.length === 0) ? (

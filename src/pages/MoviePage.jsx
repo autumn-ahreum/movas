@@ -6,40 +6,33 @@ const BASE_URL = "https://api.themoviedb.org/3/movie/";
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 
 
-
 const MoviePage = () => {
   const { id } = useParams();
+  const movieUrl = BASE_URL + id + API_KEY;
+  const creditsUrl = BASE_URL + id + "/credits" + API_KEY;
   const [addToList, setAddToList] = useState(false); // Button state for adding to my list
   const [movieData, setMovieData] = useState(null); // State to store movie data
   const [credits, setCredits] = useState(null);
 
 
-  // Fetch movie data when the id param changes
+  // Fetch movie and creidt data 
   useEffect(() => {
-    let url = BASE_URL + id + API_KEY;
-    let videoUrl = BASE_URL + id + "/videos" + API_KEY;
-    let creditsUrl = BASE_URL + id + "/credits" + API_KEY;
-
-    fetch(url)
-      .then(response => response.json())
-      .then(apiData => {
-        setMovieData(apiData);
+    Promise.all([
+      fetch(movieUrl),
+      fetch(creditsUrl)
+    ])
+    .then(([resMovie, resCredit]) =>
+      Promise.all([resMovie.json(), resCredit.json()])
+    )
+    .then(([movieData, creditData]) => {
+      setMovieData(movieData);
+      setCredits(creditData);
       });
+  }, []);
 
-      fetch( creditsUrl )
-      .then(response => response.json())
-      .then(apiData => {
-        setCredits(apiData);
-      });
-
-      console.log(creditsUrl);
-
-
-  }, [id]);
-
-  // Check if the movie is in mylist when movieData changes
+  // Get myList from local storage when movieData changes
   useEffect(() => {
-    if (!movieData) return; 
+    if (!movieData ) return; 
 
     const myList = JSON.parse(localStorage.getItem('myList')) || [];
     const isMovieInList = myList.some(item => item.id === movieData.id);
@@ -67,7 +60,6 @@ const MoviePage = () => {
     return <div>Loading...</div>;
   }
 
-  
   return (
     
     <main class="contents-wrapper">

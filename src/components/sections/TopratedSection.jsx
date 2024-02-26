@@ -45,7 +45,15 @@ export default () => {
     }, [url_set])
 
     const handleResize = () => {
-      if (window.innerWidth > 940) {
+      if (window.innerWidth > 1853) {
+        setSlidesPerView(8.9); 
+      } else if (window.innerWidth > 1530) {
+        setSlidesPerView(8.2); 
+      } else if (window.innerWidth > 1400) {
+        setSlidesPerView(7.1); 
+      } else if (window.innerWidth > 1200) {
+        setSlidesPerView(6.5); 
+      } else if (window.innerWidth > 940) {
         setSlidesPerView(6.1); 
       } else if (window.innerWidth > 840) {
         setSlidesPerView(5.5); 
@@ -89,8 +97,8 @@ export default () => {
       slidesPerView = {slidesPerView}
       navigation
       scrollbar = {{ draggable: true }}
-      onSlideChange = {() => console.log('slide change')}
-      onSwiper = {(swiper) => console.log(swiper)}
+      // onSlideChange = {() => console.log('slide change')}
+      // onSwiper = {(swiper) => console.log(swiper)}
     >
       {
         (movieData.length === 0)? (

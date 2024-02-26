@@ -13,6 +13,8 @@
             position: relative;
             justify-content: flex-end;
 
+
+
             h3{
                 position: absolute;
                 width: 100%;
@@ -20,7 +22,32 @@
                 font-size: 1rem;
                 font-family: 'Nunito Sans', 'inter', ui-sans-serif, sans-serif;
                 bottom: 8px;
-                left: 8px;
+                left: 20px;
+
+                &::before {
+                    content: " ";
+                    background-color: $accent;
+                    display: block;
+                    width: 4px;
+                    height: 18px;
+                    position: absolute;
+                    left: -6px;
+                    bottom: 4.8px;
+                    
+                }
+                @media (min-width: em(640)) {
+                     font-size: 2rem;
+                     left: 40px;
+                     bottom: 1.2rem;
+
+                     &::before {
+                        width: 8px;
+                        height: 28px;
+                        left: -16px;
+                        bottom: 12px;
+                     }
+                    
+                }
             }
 
             .img-container {
@@ -48,6 +75,19 @@
                         rgb(20, 20, 20) 100%) 
                         repeat scroll 0 0;       
                 }               
+            }
+
+            @media (min-width: em(1024)) {
+                height: 400px;
+                .img-container {
+
+                    img {
+                        display: block;
+                        object-fit: cover;
+                        object-position: top center; 
+                        width: 100%; 
+                    }
+                }
             }
         }
     }
@@ -77,12 +117,27 @@
 
     .swiper-pagination {
         bottom: -3px;
+        $bullet : 6px; 
 
         .swiper-pagination-bullet {
-            width: 6px;
-            height: 6px;
+            width: $bullet;
+            height: $bullet;
             background-color: white;
 
+
+
+
+        }
+
+        @media (min-width: em(640)) {
+            $bullet : 8.5px; 
+            bottom: 3px;
+
+
+            .swiper-pagination-bullet {
+                width: $bullet;
+                height: $bullet;
+            }
 
         }
         .swiper-pagination-bullet-active {

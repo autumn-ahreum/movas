@@ -16,11 +16,18 @@
         font-weight: 500;
         padding: 1px 2px;
         width: 100%;
-        
-
+    
         &:hover {
         cursor: pointer;
         }
+
+        @media (min-width: em(1180)) {
+            font-size: 0.98rem;
+
+
+        }
+
+
     }
 
     .place-holder {
@@ -61,6 +68,15 @@
             margin: 8px 0px 1px;
             font-weight: 700;
             padding-left: 0;
+
+            @media (min-width: em(670)) {
+                font-size: 1rem;
+
+            }
+            @media (min-width: em(1180)) {
+                font-size: 1.2rem;
+
+            }
         }
 
         .card-second-row {
@@ -74,10 +90,16 @@
                 .fa-solid.fa-star {
                     color:#ffeb0a;
                 }
+
+                @media (min-width: em(1180)) {
+                    font-size: .9rem;
+                    margin-top: 4px;
+    
+                }
             }
         }
         
-        .card-summury{
+        .card-summary{
             letter-spacing: -0.2px;
             // Remove after 5th line of text  
             overflow: hidden;
@@ -89,6 +111,19 @@
             display: -webkit-box;
             -webkit-line-clamp: 6 ;
             -webkit-box-orient: vertical;
+
+            @media (min-width: em(670)) {
+                font-size: .9rem;
+
+            }
+
+            @media (min-width: em(1180)) {
+                font-size: 1rem;
+                margin-top: 10px;
+
+            }
+
+
         }
         .card-last-row {
             padding : 0 10px 4px 4px;
@@ -154,6 +189,12 @@
                 &:hover {
                     background-color: rgba(125, 125, 125, 0.139);
                     cursor: pointer;
+                }
+
+                @media (min-width: em(1180)) {
+                
+                    font-size: .95rem;
+    
                 }
             }
             

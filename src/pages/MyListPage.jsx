@@ -16,34 +16,32 @@ const MyListPage = () => {
   }
 
   return (
-    <main>
+    <main class="mylist-contents-wrapper">
       <h1>My List</h1>
-      <div class="mylist-contents-wrapper">
-        {
-        ( myList.length === 0) ? (
-          <div class="massage">
-            <p >Sorry! You have no favourited movies. </p>
-            <p >Return to the home page to add a favourite movie</p>
-          </div>
-        )  : 
-        <div class="mylist-gallery">
-         { myList.map ( item => (
-          <Card
-            key = {item.id}
-            id = {item.id}
-            title = {item.title}
-            poster_path = {item.poster_path}
-            vote_average = {item.vote_average}
-            overview = {item.overview}
-            release_date = {item.release_date}
-            addedToList = {true} 
-            removeFromList = {removeFromList}
-          />
-        ))   
-        }
+      {
+      ( myList.length === 0) ? (
+        <div class="massage">
+          <p >Sorry! You have no favourited movies. </p>
+          <p >Return to the home page to add a favourite movie.</p>
         </div>
-        }
+      )  : 
+      <div class="mylist-gallery">
+        { myList.map ( item => (
+        <Card
+          key = {item.id}
+          id = {item.id}
+          title = {item.title}
+          poster_path = {item.poster_path}
+          vote_average = {item.vote_average}
+          overview = {item.overview}
+          release_date = {item.release_date}
+          addedToList = {true} 
+          removeFromList = {removeFromList}
+        />
+      ))   
+      }
       </div>
+      }
     </main>
   );
 };

@@ -11,7 +11,7 @@ const AboutPage = () => {
       <div class="contents-wrapper">
         <div class="first-row">
           <div class="left-side">
-            <img class="logo-img" src="../../public/image/movas-logo-img1.jpg" alt="Movas Logo" />
+            <img class="logo-img" src="../../public/image/movas-logo-img.jpg" alt="Movas Logo" />
           </div>
           <div class="right-side">
             <p>Movas is a website to provide users to search any movies and view details of movies such as summaries and main casts. Movas utilizes the movie database, which is a powerful community-built movie database.</p>

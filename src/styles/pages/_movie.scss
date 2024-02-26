@@ -5,6 +5,8 @@
 .contents-wrapper {
     padding-left: 5px;
     padding-right: 5px;
+    max-width: 1024px;
+    margin: 0 auto;
 
     .movie-banner-container {
         position: relative;
@@ -100,10 +102,9 @@
                         }
                     }
                 }
-
             }
 
-            }
+            
             .right-title-side {
 
                 h2 {
@@ -115,10 +116,16 @@
     
                 }
 
-                
+                @media (min-width: em(640)) {
+                    
+                    font-size: 1.5rem;
 
+                    p {
+                        font-size: 1rem;
+                    }
 
-            
+                }
+            }
         }
     }
 
@@ -127,12 +134,19 @@
         gap: 5px;
         max-width: 100%;
         margin-top: 6px;
-        margin-bottom: 10px;
+        margin-bottom: 20rem;
+
+        @media (min-width: em(640)) {
+            padding: 5px 8px;
+
+        }
 
 
         .info-left {
             width: calc(68% - 3px);
             padding-left: 3px;
+
+
 
             .casts {
 
@@ -145,6 +159,23 @@
                     display: black;
                     margin-top: 0;
                 }
+
+                @media (min-width: em(640)){
+
+                    margin-bottom: 20px;
+
+                    h3 {
+                        font-size: 1.4rem;
+                    }
+
+                    p {
+                        font-size: 1.1rem;
+                        line-height: 1.5;
+                        padding-left: 5px;
+
+
+                    } 
+                }
             }
 
             .genre-container {
@@ -156,6 +187,12 @@
                     background-color: rgb(139 89 206 / 30%);
                     padding: 0 4px;
                     border-radius: 3px;
+
+                    @media (min-width: em(640)) {
+                        font-size: 1rem;
+                         margin: 0px 8px 0 0;
+
+                    }
                 }
             }
 
@@ -171,6 +208,21 @@
                 p {
                     font-size: 0.9rem;
                     line-height: 1.2;
+                }
+
+                @media (min-width: em(640)){
+
+                    margin-top: 20px;
+                    h3 {
+                        font-size: 1.4rem;
+                    }
+
+                    p {
+                        font-size: 1.1rem;
+                        line-height: 1.5;
+                        padding-left: 5px;
+
+                    } 
                 }
             }
 
