@@ -7,6 +7,7 @@
     padding: 6px 4px 20px;
     max-width: 1024px;
     margin: 0 auto;
+    min-height: 1000px;
 
     @media (min-width: em(760)) {
         margin-top: 2rem;
@@ -36,7 +37,6 @@
         margin: auto;
         position: relative;
         justify-items: center;
-        // flex-wrap: wrap;
         justify-content: center;
         margin-top: 2rem;
         margin-bottom: 6rem;
@@ -75,19 +75,39 @@
             }
 
             h5{
+                @media (min-width: em(670)) {
+                    height: 33px;
+                }
+
                 @media (min-width: em(760)) {
+                    height: 38px;
+
                     margin-top: 5px;
                     font-size: 1rem;
                 }
+
+                @media (min-width: em(1180)) {
+                    font-size: 1.2rem;
+    
+                }
+
+
             }
         
             .movie-info {
-                height: calc(100% - 27.7px);
+                height: calc(100% - 41.7px);
+                width: 100%;
+
+                @media (min-width: em(670)) {
+                height: calc(100% - 46.7px);
+                }
 
                 @media (min-width: em(760)) {
-                    height: calc(100% - 38.7px);
+                    height: calc(100% - 58.7px);
+                }
 
-        
+                @media (min-width: em(850)) {
+                    width: 201px;
                 }
 
                 h5 {
@@ -110,6 +130,7 @@
                     }
                     .card-second-row {
                         margin-top: 5px;
+                        margin-right: 8px;
 
                         p {
                             font-size: .95rem;
