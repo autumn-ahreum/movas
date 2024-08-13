@@ -8,7 +8,6 @@
     overflow: hidden; 
     visibility: hidden;
     height: 0;
-    // transform : scale(0);
     transform: scaleX(0);
     transition: transform 0.3s ease, visibility 0s;
 
@@ -30,7 +29,7 @@
     .show &{
         transition: transform 0.3s ease, visibility 0s;
         visibility: visible;
-        height: em(180); 
+        height: 13.25em; 
         transform : scaleX(1);
 
     } 

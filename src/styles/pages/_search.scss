@@ -1,0 +1,72 @@
+@use '../base/settings' as *;
+@use '../utilities/functions' as *;
+@use '../utilities/mixins' as *;
+
+.mylist-contents-wrapper.search-wrapper {
+    padding: 0 0.8rem;
+
+    .search-bar {
+        padding: 0 0.4rem;
+        color: transparent;
+        
+        .search-text {
+            height: 2.3rem;
+            width: 100%;
+            padding-left: .4rem;
+            padding-top: .2rem;
+            background-color: rgb(249, 249, 249);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            max-width: 700px;
+            
+            &:focus {
+                // border: red solid 2px;
+                outline: none; /* 기본 포커스 아웃라인 제거 */
+                // background-color: aqua;
+                border: solid 3px $accent;
+                // outline: $yellow 0.4px solid;
+
+                &::placeholder {
+                // color: #a990ca;
+                }
+
+
+
+            }
+
+            &::placeholder {
+                opacity: 1;
+                // color: $accent;
+                font-size: 1rem;
+                font-weight: 200;
+
+
+
+            }
+        }
+    }
+
+    .mylist-gallery {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn-load-more {
+        margin-left: 1.2rem;
+        height: 2.4rem;
+        font-size: 1.2rem;
+        border: none;
+        color: white;
+        background-color: #7136b9;
+        padding: 0.4rem 0.9rem;
+        border-radius: 5px;
+        display: block;
+        margin: 0 auto;
+
+        &:focus,
+        &:hover {
+            background-color: #865abbca;
+        }
+
+    }
+}

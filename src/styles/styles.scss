@@ -16,12 +16,11 @@
 @use './pages/mylist';
 @use './pages/movie';
 @use './pages/about';
+@use './pages/search';
 
 //elements
 @use './components/card';
 @use './components/swiper';
-
-
 
 // Utilities
 @use './utilities/utility-classes';

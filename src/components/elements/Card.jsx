@@ -4,9 +4,6 @@ import { Link } from 'react-router-dom';
 const imageFolderPath = import.meta.env.BASE_URL + "images/";
 
 
-
-// import { addToList } from '../../redux/store';
-
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/"
 
 const Card = ({ id, title, poster_path, vote_average, overview, release_date, addedToList, removeFromList}) => {
@@ -14,11 +11,6 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
   const [ posterClass, setPosterClass ] = useState( 'card-poster' ); // class name for poster img
   const [ addToList, setAddToList ] = useState( false ); // add my list button
   const [ check, setCheck ] = useState( false ); // add my list button
-
-
-  // Redux 
-  // let myList = useSelector( (state) => state.myList )
-  // let dispatch = useDispatch()
 
   useEffect(() => {
     if (addedToList == true) {
@@ -51,6 +43,8 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
     }
   }
 
+  const truncatedTitle = title.length > 25 ? title.slice(0, 25) + '...' : title;
+
   return (
     <div class= "card-container" >
         <img 
@@ -64,13 +58,13 @@ const Card = ({ id, title, poster_path, vote_average, overview, release_date, ad
               setPosterClass('place-holder'); // Update the poster class state 
             }}
           />
-        <h5>{ title }</h5>
+        <h5>{ truncatedTitle }</h5>
         <div class="movie-info">
-            <h5>{ title }</h5>
-            <div class='card-second-row'>
+        <h5>{ truncatedTitle }</h5>
+        <div class='card-second-row'>
                 <p>{ release_date }</p> 
                 <p><i class="fa-solid fa-star"></i>
-                   { vote_average.toFixed(1) }</p>
+                   { vote_average ? vote_average.toFixed(1) : '...'}</p>
             </div>
             <p class="card-summary">{ overview }</p>
             <div class='card-last-row' >
