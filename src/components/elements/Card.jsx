@@ -1,12 +1,12 @@
 import React, { useState , useEffect } from 'react'
 import { Link } from 'react-router-dom';
 
-const imageFolderPath = import.meta.env.BASE_URL + "images/";
 
 
 const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/"
 
 const Card = ({ id, title, poster_path, vote_average, overview, release_date, addedToList, removeFromList}) => {
+  const imageFolderPath = import.meta.env.BASE_URL + "images/";
 
   const [ posterClass, setPosterClass ] = useState( 'card-poster' ); // class name for poster img
   const [ addToList, setAddToList ] = useState( false ); // add my list button
