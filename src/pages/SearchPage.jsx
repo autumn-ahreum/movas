@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Card from '../components/elements/Card';
-import debounce from 'lodash.debounce'; // If using lodash for debouncing
+import debounce from 'lodash.debounce';
 
 const API_key = "&api_key=337d4aa999639b97c6ca769ff17079b1";
 const BASE_URL = "https://api.themoviedb.org/3/search/movie?query=";
@@ -54,9 +54,12 @@ const SearchPage = () => {
     }
   };
 
+  // Debounced fetchData function
+  const debouncedFetchData = useCallback(debounce(fetchData, 500), [search, page]);
+
   useEffect(() => {
-    fetchData();
-  }, [search, page]);
+    debouncedFetchData();
+  }, [search, page, debouncedFetchData]);
 
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
