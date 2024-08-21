@@ -14,6 +14,7 @@
     "@fontsource/questrial": "^5.0.8",
     "@fontsource/shrikhand": "^5.0.18",
     "@reduxjs/toolkit": "^2.2.1",
+    "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
