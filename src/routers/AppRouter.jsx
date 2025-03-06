@@ -16,7 +16,7 @@ import  NotFoundPage from '../pages/NotFoundPage';
 const AppRouter = () => {
   return (
 
-    <BrowserRouter basename={"/movas"}>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Header />
         <Routes>
             <Route path="/" element={<HomePage />} />
