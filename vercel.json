@@ -1,6 +1,6 @@
 {
     "rewrites": [
-      { "source": "/movas/:path*", "destination": "/movas/index.html" }
+      { "source": "/(.*)", "destination": "/movas/index.html" }
     ]
   }
   
